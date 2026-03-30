@@ -1,19 +1,46 @@
-# ΨSCN Biomimetic Coherence Motor
+# Coherence Criticality Simulation (2D TDGL)
 
-A TDGL (Model A) simulation of a real scalar field with φ⁴ potential that demonstrates spontaneous coherence via a second-order phase transition. Designed as a biomimetic "coherence engine" candidate for next-generation AGI systems.
+This repository implements a numerical framework to study **critical behavior of a coherence field** using a two-dimensional time-dependent Ginzburg–Landau (TDGL) model.
 
-## Motivation
-Large language models excel at pattern matching but still suffer from coherence collapse in long reasoning chains. This motor generates emergent long-range order from local noisy dynamics — inspired by critical phenomena in physics, neuroscience (global workspace ignition), and driven-dissipative systems.
+The project investigates whether coherence, treated as a physical field, exhibits:
 
-The emergent `k_eff` term introduces a geometric-like feedback that grows with coherence, potentially useful for self-referential consistency or "curving" representation space toward truth.
+- phase transitions
+- finite-size scaling
+- universality-like behavior
+- emergent collective structure
 
-## Features
-- Tunable control parameter λ
-- Order parameter, susceptibility, Binder cumulant, correlation length
-- Emergent effective stiffness `k_eff(α, ζ)`
-- Reproducible results with plots and JSON export
+---
 
-## How to Run
-```bash
-pip install numpy matplotlib
-python psiscn_motor.py
+## 📌 Overview
+
+We simulate a scalar field \\( \Psi(x, y, t) \\) evolving under stochastic TDGL dynamics:
+
+\[
+\Psi(t+\Delta t) = \Psi(t) + \gamma \Delta t \left[\nabla^2 \Psi - 2\alpha(\lambda)\Psi - 4\beta \Psi^3 \right] + \eta
+\]
+
+with:
+
+\[
+\alpha(\lambda) = a_0 (\lambda_c - \lambda)
+\]
+
+The control parameter \\( \lambda \\) drives the system through a **coherence phase transition**.
+
+---
+
+## 🔬 Key Features
+
+- 2D lattice simulation (periodic boundary conditions)
+- Radial isotropic correlation function (FFT-based)
+- Correlation length estimation \\( \xi \\)
+- Binder cumulant analysis
+- Susceptibility and order parameter tracking
+- Finite-size scaling (FSS)
+- Automatic data collapse (grid search)
+- Bootstrap uncertainty estimation
+- Autocorrelation-time correction (critical slowing down)
+
+---
+
+## 📁 Project Structure
