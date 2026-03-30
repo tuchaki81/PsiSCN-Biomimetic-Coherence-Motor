@@ -9,6 +9,8 @@ The project investigates whether coherence, treated as a physical field, exhibit
 - universality-like behavior
 - emergent collective structure
 
+Page https://tuchaki81.github.io/PsiSCN-Biomimetic-Coherence-Motor/#figures
+
 ---
 
 ## 📌 Overview
